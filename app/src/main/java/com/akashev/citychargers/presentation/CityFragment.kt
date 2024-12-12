@@ -1,4 +1,4 @@
-package com.akashev.citychargers
+package com.akashev.citychargers.presentation
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,12 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.akashev.citychargers.R
 import com.akashev.citychargers.databinding.FragmentFirstBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment() {
+class CityFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
 

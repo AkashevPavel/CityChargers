@@ -1,4 +1,4 @@
-package com.akashev.citychargers
+package com.akashev.citychargers.presentation
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
@@ -9,9 +9,10 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import com.akashev.citychargers.R
 import com.akashev.citychargers.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity() {
+class CityChargersActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
