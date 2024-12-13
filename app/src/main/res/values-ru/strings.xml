@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Зарядки</string>
+    <string name="cities_fragment_label">Города</string>
+    <string name="chargers_fragment_label">Зарядки</string>
+    <string name="confirm_choice">Подтвердить выбор</string>
+    <string name="back">Назад</string>
+</resources>
