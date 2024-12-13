@@ -44,6 +44,8 @@ dependencies {
     implementation(libs.bundles.android)
     implementation(libs.material)
     implementation(libs.bundles.kotlin)
+    implementation(libs.koin)
+    testImplementation(libs.koin.test)
     testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.bundles.android.test)
