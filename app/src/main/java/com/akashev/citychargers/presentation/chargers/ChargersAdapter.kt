@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.akashev.citychargers.R
 import com.akashev.citychargers.data.model.Charger
 import com.akashev.citychargers.databinding.ChargerListItemBinding
 
@@ -42,10 +43,10 @@ class ChargersViewHolder(
         binding.chargerName.text = item.name
         binding.chargerAddress.text = item.address
 
-        val colorRes = android.R.color.holo_red_light.takeIf { item.isBusy }
-            ?: android.R.color.holo_green_light
+        val background = R.drawable.red_background.takeIf { item.isBusy }
+            ?: R.drawable.green_background
         binding.root.background = ResourcesCompat.getDrawable(
-            binding.root.resources, colorRes, null
+            binding.root.resources, background, null
         )
     }
 }

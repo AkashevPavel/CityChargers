@@ -8,12 +8,13 @@
     tools:context=".presentation.chargers.ChargersFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chargers"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_margin="@dimen/default_margin"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/back_to_cities_button"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/charger_list_item"
         />
 
     <Button
