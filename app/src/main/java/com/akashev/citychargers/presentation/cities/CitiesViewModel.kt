@@ -1,16 +1,15 @@
 package com.akashev.citychargers.presentation.cities
 
 import androidx.lifecycle.viewModelScope
-import com.akashev.citychargers.data.model.City
 import com.akashev.citychargers.data.repository.CityChargersRepository
 import com.akashev.citychargers.presentation.BaseViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
-import kotlin.coroutines.CoroutineContext
 
 internal class CitiesViewModel(
     private val repository: CityChargersRepository
@@ -20,30 +19,23 @@ internal class CitiesViewModel(
         getCities()
     }
 
-    private val mutableUiState = MutableStateFlow(CityUiState())
-    val uiState = mutableUiState.asStateFlow()
+    private val mutableCityNames = MutableStateFlow<List<String>>(emptyList())
+    val cityNames = mutableCityNames.asStateFlow()
 
-    override val onCoroutineError: (CoroutineContext, Throwable) -> Unit = { _, throwable ->
-        throwable.localizedMessage?.let { message ->
-            mutableUiState.update { it.copy(errorMessage = message) }
-        }
-    }
+    private val mutableSelectedCity = MutableStateFlow("")
+    val selectedCity = mutableSelectedCity.asStateFlow()
 
     fun getCities() {
         viewModelScope.launch(coroutineExceptionHandler + Dispatchers.IO) {
-            mutableUiState.update { it.copy(isLoading = true) }
+            mutableIsLoading.update { true }
             val cities = async {
-                repository.getAllCities()
+                delay(1000)
+                repository.getAllCityNames()
             }.await()
-            mutableUiState.update { it.copy(isLoading = false, cities = cities) }
+            mutableIsLoading.update { false }
+            mutableCityNames.update { cities }
         }
     }
 
-    fun setSelectedCity(city: City) {
-        viewModelScope.launch {
-            mutableUiState.update { current ->
-                current.copy(selectedCity = city.takeUnless { it == current.selectedCity })
-            }
-        }
-    }
+    fun setSelectedCity(cityName: String) { mutableSelectedCity.update { cityName } }
 }

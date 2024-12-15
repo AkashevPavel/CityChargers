@@ -22,7 +22,8 @@ class CityChargersActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
         with(navController) {
-            setupActionBarWithNavController(this, AppBarConfiguration(graph))
+            appBarConfiguration = AppBarConfiguration(graph)
+            setupActionBarWithNavController(this, appBarConfiguration)
         }
     }
 

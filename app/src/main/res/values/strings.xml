@@ -5,4 +5,6 @@
     <string name="chargers_fragment_label">Chargers</string>
     <string name="confirm_choice">Confirm choice</string>
     <string name="back">Back</string>
+    <string name="city_name">City name:</string>
+    <string name="default_error_message">Error occurred</string>
 </resources>

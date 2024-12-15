@@ -5,4 +5,6 @@
     <string name="chargers_fragment_label">Зарядки</string>
     <string name="confirm_choice">Подтвердить выбор</string>
     <string name="back">Назад</string>
+    <string name="city_name">Название города:</string>
+    <string name="default_error_message">Обнаружена ошибка</string>
 </resources>

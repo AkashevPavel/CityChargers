@@ -16,7 +16,8 @@
         <activity
             android:name=".presentation.CityChargersActivity"
             android:exported="true"
-            android:theme="@style/Theme.CityChargers">
+            android:theme="@style/Theme.CityChargers"
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

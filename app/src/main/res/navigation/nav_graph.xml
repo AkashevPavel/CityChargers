@@ -19,10 +19,6 @@
         android:id="@+id/ChargersFragment"
         android:name="com.akashev.citychargers.presentation.chargers.ChargersFragment"
         android:label="@string/chargers_fragment_label"
-        tools:layout="@layout/fragment_chargers">
-
-        <action
-            android:id="@+id/action_ChargersFragment_to_CitiesFragment"
-            app:destination="@id/CitiesFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_chargers"
+        />
 </navigation>

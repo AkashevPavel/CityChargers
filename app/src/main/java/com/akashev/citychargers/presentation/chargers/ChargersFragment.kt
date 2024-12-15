@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.akashev.citychargers.R
 import com.akashev.citychargers.databinding.FragmentChargersBinding
 
 class ChargersFragment : Fragment() {
@@ -26,7 +25,11 @@ class ChargersFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_ChargersFragment_to_CitiesFragment)
+            findNavController().popBackStack()
         }
+    }
+
+    companion object {
+        const val CITY_NAME = "city_name"
     }
 }
